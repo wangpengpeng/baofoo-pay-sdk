@@ -1,0 +1,14 @@
+{
+    "name": "wangpengpeng/BaoFooPay-sdk",
+    "description": "baoFooPay-sdk Resource SDK for PHP by dwd",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wangpengpeng",
+            "email": "1215303889@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
