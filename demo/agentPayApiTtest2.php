@@ -6,12 +6,13 @@
 require      "../baofoo/BaofooSdk.php";
 
     $path ="../config/";
+    $path = __dir__ ."/../config/";
+var_dump($path);
 //    $path ="/home/wpp/www/baofoo4.1.5/baofu.v4.1.2/demo/BaoFooPay-sdk/config/";
     $config = parse_ini_file($path."config.ini");
 
     $baofooSdk = new BaofooSdk($config['member_id'], $config['terminal_id'],'json',$path.'m_pri.pfx',
                     $path.'baofoo_pub.cer',$config['private_key_password'],false);
-
 
             $arr =[['trans_no' => '4ABCDEFG11',
                     'trans_money' => '12',
@@ -45,9 +46,9 @@ require      "../baofoo/BaofooSdk.php";
                 ['trans_batchid'=>20354611,'trans_no'=>'4ABCDEFG68'],
                 ['trans_batchid'=>20354631,'trans_no'=>'4ABCDEFG12'],
                ];
-//        $rtn = $baofooSdk->agentPayStatusQueryApi($arr,'http://paytest.baofoo.com/baofoo-fopay/pay/BF0040002.do');
-//        echo $rtn;
-//        exit;
+        $rtn = $baofooSdk->agentPayStatusQueryApi($arr,'http://paytest.baofoo.com/baofoo-fopay/pay/BF0040002.do');
+        echo $rtn;
+        exit;
 
         //bf0003
         $arr = [
@@ -81,6 +82,6 @@ require      "../baofoo/BaofooSdk.php";
             ],
         ] ;
 
-        $rtn =  $baofooSdk->agentPaySplitApi($arr,'http://paytest.baofoo.com/baofoo-fopay/pay/BF0040004.do');
-        echo $rtn;
+//        $rtn =  $baofooSdk->agentPaySplitApi($arr,'http://paytest.baofoo.com/baofoo-fopay/pay/BF0040004.do');
+//        echo $rtn;
         exit;
